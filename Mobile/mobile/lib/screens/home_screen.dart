@@ -11,14 +11,16 @@ class HomeScreen extends StatelessWidget {
     {'title': 'ጀግኖች', 'icon': 'hero'},
   ];
 
+   HomeScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Yeneta Kids', style: TextStyle(fontFamily: 'NotoSansEthiopic')),
+        title: const Text('Yeneta Kids', style: TextStyle(fontFamily: 'NotoSansEthiopic')),
         actions: [
           IconButton(
-            icon: Icon(Icons.logout),
+            icon: const Icon(Icons.logout),
             onPressed: () async {
               await SharedPreferences.getInstance().then((prefs) => prefs.clear());
               Navigator.pushReplacementNamed(context, '/');
@@ -27,8 +29,8 @@ class HomeScreen extends StatelessWidget {
         ],
       ),
       body: GridView.builder(
-        padding: EdgeInsets.all(16),
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+        padding: const EdgeInsets.all(16),
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
           childAspectRatio: 1,
           crossAxisSpacing: 16,
@@ -47,11 +49,11 @@ class HomeScreen extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Icon(Icons.book, size: 48, color: Colors.deepOrange),
-                  SizedBox(height: 8),
+                  const Icon(Icons.book, size: 48, color: Colors.deepOrange),
+                  const SizedBox(height: 8),
                   Text(
                     subjects[i]['title']!,
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
                       fontFamily: 'NotoSansEthiopic',

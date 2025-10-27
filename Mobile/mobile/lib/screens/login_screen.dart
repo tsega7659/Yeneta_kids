@@ -3,6 +3,8 @@ import 'package:mobile/services/api_services.dart';
 import 'home_screen.dart';
 
 class LoginScreen extends StatefulWidget {
+  const LoginScreen({super.key});
+
   @override
   _LoginScreenState createState() => _LoginScreenState();
 }
@@ -44,11 +46,11 @@ class _LoginScreenState extends State<LoginScreen> {
       backgroundColor: Colors.orange[50],
       body: SafeArea(
         child: Padding(
-          padding: EdgeInsets.all(24),
+          padding: const EdgeInsets.all(24),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(
+              const Text(
                 'Yeneta Kids',
                 style: TextStyle(
                   fontSize: 36,
@@ -57,41 +59,41 @@ class _LoginScreenState extends State<LoginScreen> {
                   color: Colors.deepOrange,
                 ),
               ),
-              SizedBox(height: 40),
+              const SizedBox(height: 40),
               TextField(
                 controller: _emailController,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   labelText: 'Email',
                   border: OutlineInputBorder(),
                   prefixIcon: Icon(Icons.email),
                 ),
                 keyboardType: TextInputType.emailAddress,
               ),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
               TextField(
                 controller: _passwordController,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   labelText: 'Password',
                   border: OutlineInputBorder(),
                   prefixIcon: Icon(Icons.lock),
                 ),
                 obscureText: true,
               ),
-              SizedBox(height: 24),
+              const SizedBox(height: 24),
               _isLoading
-                  ? CircularProgressIndicator()
+                  ? const CircularProgressIndicator()
                   : ElevatedButton(
                       onPressed: _login,
-                      child: Text('Login', style: TextStyle(fontSize: 18)),
                       style: ElevatedButton.styleFrom(
-                        padding: EdgeInsets.symmetric(vertical: 16),
-                        minimumSize: Size(double.infinity, 50),
+                        padding: const EdgeInsets.symmetric(vertical: 16),
+                        minimumSize: const Size(double.infinity, 50),
                       ),
+                      child: Text('Login', style: TextStyle(fontSize: 18)),
                     ),
               if (_error != null)
                 Padding(
-                  padding: EdgeInsets.only(top: 16),
-                  child: Text(_error!, style: TextStyle(color: Colors.red)),
+                  padding: const EdgeInsets.only(top: 16),
+                  child: Text(_error!, style: const TextStyle(color: Colors.red)),
                 ),
             ],
           ),

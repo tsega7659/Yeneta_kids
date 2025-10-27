@@ -13,7 +13,7 @@ void main() async {
 
 class MyApp extends StatelessWidget {
   final String initialRoute;
-  MyApp({required this.initialRoute});
+  const MyApp({super.key, required this.initialRoute});
 
   @override
   Widget build(BuildContext context) {
