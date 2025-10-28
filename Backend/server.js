@@ -4,12 +4,14 @@ const cors = require('cors');
 require('dotenv').config();
 
 const authRoutes = require('./routes/auth');
+const lessonRoutes = require('./routes/lessons')
 
 const app = express();
 app.use(cors());
 app.use(express.json());
 
 app.use('/api/auth', authRoutes);  // All auth routes here
+
 
 app.get('/', (req, res) => {
   res.json({ message: 'Yeneta Kids API v1' });
