@@ -1,5 +1,7 @@
 // backend/server.js
 const express = require('express');
+
+
 const cors = require('cors');
 require('dotenv').config();
 
@@ -9,6 +11,8 @@ const lessonRoutes = require('./routes/lessons')
 const app = express();
 app.use(cors());
 app.use(express.json());
+app.use('/audio', express.static('public/audio'));
+app.use('/images', express.static('public/images'));
 
 app.use('/api/auth', authRoutes);  // All auth routes here
 

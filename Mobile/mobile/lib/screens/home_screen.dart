@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mobile/screens/lesson_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -42,8 +43,13 @@ class HomeScreen extends StatelessWidget {
             elevation: 4,
             child: InkWell(
               onTap: () {
-                ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(content: Text('${subjects[i]['title']} selected')),
+               
+                MaterialPageRoute(
+                  builder: (context) => LessonScreen(
+                    subject: "amharic",
+                    level: 1,
+                    sublevel: 1,
+                  ),
                 );
               },
               child: Column(
